@@ -1,0 +1,850 @@
+Program.Sub.ScreenSU.Start
+gui.Form1..create
+gui.Form1..caption("Daily Balance Report")
+gui.Form1..size(4860,6600)
+gui.Form1..minx(0)
+gui.Form1..miny(0)
+gui.Form1..position(0,0)
+gui.Form1..event(unload,form1_unload)
+gui.Form1..alwaysontop(False)
+gui.Form1..fontname("Arial")
+gui.Form1..fontsize(8)
+gui.Form1..forecolor(0)
+gui.Form1..fontstyle(,,,,)
+gui.Form1..BackColor(-2147483633)
+gui.Form1..controlbox(True)
+gui.Form1..maxbutton(True)
+gui.Form1..minbutton(True)
+gui.Form1..mousepointer(0)
+gui.Form1..moveable(True)
+gui.Form1..sizeable(True)
+gui.Form1..ShowInTaskBar(True)
+gui.Form1..titlebar(True)
+gui.Form1.frmEmpl.create(frame)
+gui.Form1.frmEmpl.caption("")
+gui.Form1.frmEmpl.size(4350,1335)
+gui.Form1.frmEmpl.position(135,90)
+gui.Form1.frmEmpl.visible(True)
+gui.Form1.frmEmpl.borderstyle(0)
+gui.Form1.frmEmpl.fontname("Arial")
+gui.Form1.frmEmpl.fontsize(8)
+gui.Form1.frmDate.create(frame)
+gui.Form1.frmDate.caption("")
+gui.Form1.frmDate.size(4350,1035)
+gui.Form1.frmDate.position(135,3975)
+gui.Form1.frmDate.visible(True)
+gui.Form1.frmDate.borderstyle(0)
+gui.Form1.frmDate.fontname("Arial")
+gui.Form1.frmDate.fontsize(8)
+gui.Form1.frmWO.create(frame)
+gui.Form1.frmWO.caption("")
+gui.Form1.frmWO.size(4350,1335)
+gui.Form1.frmWO.position(135,1415)
+gui.Form1.frmWO.visible(True)
+gui.Form1.frmWO.borderstyle(0)
+gui.Form1.frmWO.fontname("Arial")
+gui.Form1.frmWO.fontsize(8)
+gui.Form1.frmWC.create(frame)
+gui.Form1.frmWC.caption("")
+gui.Form1.frmWC.size(4350,1455)
+gui.Form1.frmWC.position(135,2740)
+gui.Form1.frmWC.visible(True)
+gui.Form1.frmWC.borderstyle(0)
+gui.Form1.frmWC.fontname("Arial")
+gui.Form1.frmWC.fontsize(8)
+gui.Form1.lblSEmp.create(label,"Starting Employee",True,1440,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.Form1.lblSEmp.parent("frmempl")
+gui.Form1.lblSEmp.defaultvalue("")
+gui.Form1.lblSEmp.controlgroup(0)
+gui.Form1.txtsEmp.create(textbox,"",True,1440,300,0,200,440,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtsEmp.parent("frmempl")
+gui.Form1.txtsEmp.event(keypressenter,txtsemp_keypressenter)
+gui.Form1.txtsEmp.maxLength(5)
+gui.Form1.txtsEmp.event(lostfocus,txtsemp_lostfocus)
+gui.Form1.txtsEmp.defaultvalue("")
+gui.Form1.txtsEmp.controlgroup(1)
+gui.Form1.cmdSEmp.create(button)
+gui.Form1.cmdSEmp.caption("^")
+gui.Form1.cmdSEmp.visible(True)
+gui.Form1.cmdSEmp.size(420,300)
+gui.Form1.cmdSEmp.zorder(0)
+gui.Form1.cmdSEmp.position(1670,440)
+gui.Form1.cmdSEmp.enabled(True)
+gui.Form1.cmdSEmp.parent("frmempl")
+gui.Form1.cmdSEmp.fontname("Arial")
+gui.Form1.cmdSEmp.fontsize(8)
+gui.Form1.cmdSEmp.event(click,cmdsemp_click)
+gui.Form1.cmdSEmp.defaultvalue("")
+gui.Form1.cmdSEmp.controlgroup(0)
+gui.Form1.lblEEMp.create(label,"Ending Employee",True,1440,255,1,2315,200,True,0,Arial,8,-2147483633,0)
+gui.Form1.lblEEMp.parent("frmempl")
+gui.Form1.lblEEMp.defaultvalue("")
+gui.Form1.lblEEMp.controlgroup(0)
+gui.Form1.txtEEmp.create(textbox,"",True,1440,300,0,2315,440,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEEmp.parent("frmempl")
+gui.Form1.txtEEmp.maxLength(5)
+gui.Form1.txtEEmp.defaultvalue("")
+gui.Form1.txtEEmp.controlgroup(1)
+gui.Form1.cmdEEmp.create(button)
+gui.Form1.cmdEEmp.caption("^")
+gui.Form1.cmdEEmp.visible(True)
+gui.Form1.cmdEEmp.size(420,300)
+gui.Form1.cmdEEmp.zorder(0)
+gui.Form1.cmdEEmp.position(3770,440)
+gui.Form1.cmdEEmp.enabled(True)
+gui.Form1.cmdEEmp.parent("frmempl")
+gui.Form1.cmdEEmp.fontname("Arial")
+gui.Form1.cmdEEmp.fontsize(8)
+gui.Form1.cmdEEmp.event(click,cmdeemp_click)
+gui.Form1.cmdEEmp.defaultvalue("")
+gui.Form1.cmdEEmp.controlgroup(0)
+gui.Form1.chkAll.create(checkbox)
+gui.Form1.chkAll.caption("All Employees")
+gui.Form1.chkAll.visible(True)
+gui.Form1.chkAll.size(1935,255)
+gui.Form1.chkAll.zorder(0)
+gui.Form1.chkAll.position(200,900)
+gui.Form1.chkAll.enabled(True)
+gui.Form1.chkAll.alignment(0)
+gui.Form1.chkAll.parent("frmempl")
+gui.Form1.chkAll.fontname("Arial")
+gui.Form1.chkAll.fontsize(8)
+gui.Form1.chkAll.defaultvalue("")
+gui.Form1.chkAll.controlgroup(0)
+gui.Form1.dtpSDate.create(datepicker)
+gui.Form1.dtpSDate.visible(True)
+gui.Form1.dtpSDate.size(1935,285)
+gui.Form1.dtpSDate.zorder(0)
+gui.Form1.dtpSDate.position(200,440)
+gui.Form1.dtpSDate.enabled(True)
+gui.Form1.dtpSDate.parent("frmdate")
+gui.Form1.dtpSDate.checkbox(False)
+gui.Form1.dtpSDate.defaultvalue("")
+gui.Form1.dtpSDate.controlgroup(0)
+gui.Form1.lblSDate.create(label,"Starting Date",True,1935,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.Form1.lblSDate.parent("frmdate")
+gui.Form1.lblSDate.defaultvalue("")
+gui.Form1.lblSDate.controlgroup(0)
+gui.Form1.lblEDate.create(label,"Ending Date",True,1935,255,1,2240,200,True,0,Arial,8,-2147483633,0)
+gui.Form1.lblEDate.parent("frmdate")
+gui.Form1.lblEDate.defaultvalue("")
+gui.Form1.lblEDate.controlgroup(0)
+gui.Form1.dtpEDate.create(datepicker)
+gui.Form1.dtpEDate.visible(True)
+gui.Form1.dtpEDate.size(1935,285)
+gui.Form1.dtpEDate.zorder(0)
+gui.Form1.dtpEDate.position(2240,440)
+gui.Form1.dtpEDate.enabled(True)
+gui.Form1.dtpEDate.parent("frmdate")
+gui.Form1.dtpEDate.checkbox(False)
+gui.Form1.dtpEDate.defaultvalue("")
+gui.Form1.dtpEDate.controlgroup(0)
+gui.Form1.cmdOK.create(button)
+gui.Form1.cmdOK.caption("OK")
+gui.Form1.cmdOK.visible(True)
+gui.Form1.cmdOK.size(855,375)
+gui.Form1.cmdOK.zorder(0)
+gui.Form1.cmdOK.position(200,5400)
+gui.Form1.cmdOK.enabled(True)
+gui.Form1.cmdOK.fontname("Arial")
+gui.Form1.cmdOK.fontsize(8)
+gui.Form1.cmdOK.event(click,cmdok_click)
+gui.Form1.cmdOK.defaultvalue("")
+gui.Form1.cmdOK.controlgroup(0)
+gui.Form1.lblWait.create(label,"",True,3255,255,1,1300,5400,False,0,Arial,8,-2147483633,0)
+gui.Form1.lblWait.defaultvalue("")
+gui.Form1.lblWait.controlgroup(0)
+gui.Form1.txtSWO.create(textbox,"",True,870,300,0,200,425,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtSWO.parent("frmwo")
+gui.Form1.txtSWO.event(lostfocus,txtswo_lostfocus)
+gui.Form1.txtSWO.defaultvalue("")
+gui.Form1.txtSWO.controlgroup(1)
+gui.Form1.txtEWO.create(textbox,"",True,870,300,0,2315,425,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEWO.parent("frmwo")
+gui.Form1.txtEWO.defaultvalue("")
+gui.Form1.txtEWO.controlgroup(1)
+gui.Form1.chkAllWO.create(checkbox)
+gui.Form1.chkAllWO.caption("Al Work Orders")
+gui.Form1.chkAllWO.visible(True)
+gui.Form1.chkAllWO.size(1935,255)
+gui.Form1.chkAllWO.zorder(0)
+gui.Form1.chkAllWO.position(200,900)
+gui.Form1.chkAllWO.enabled(True)
+gui.Form1.chkAllWO.alignment(0)
+gui.Form1.chkAllWO.parent("frmwo")
+gui.Form1.chkAllWO.fontname("Arial")
+gui.Form1.chkAllWO.fontsize(8)
+gui.Form1.chkAllWO.defaultvalue("1")
+gui.Form1.chkAllWO.controlgroup(1)
+gui.Form1.lbl6.create(label,"Starting Work Order",True,1440,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl6.parent("frmwo")
+gui.Form1.lbl6.defaultvalue("")
+gui.Form1.lbl6.controlgroup(0)
+gui.Form1.lbl7.create(label,"Ending Work Order",True,1440,255,1,2315,200,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl7.parent("frmwo")
+gui.Form1.lbl7.defaultvalue("")
+gui.Form1.lbl7.controlgroup(0)
+gui.Form1.cmdSWO.create(button)
+gui.Form1.cmdSWO.caption("^")
+gui.Form1.cmdSWO.visible(True)
+gui.Form1.cmdSWO.size(420,300)
+gui.Form1.cmdSWO.zorder(0)
+gui.Form1.cmdSWO.position(1670,425)
+gui.Form1.cmdSWO.enabled(True)
+gui.Form1.cmdSWO.parent("frmwo")
+gui.Form1.cmdSWO.fontname("Arial")
+gui.Form1.cmdSWO.fontsize(8)
+gui.Form1.cmdSWO.event(click,cmdswo_click)
+gui.Form1.cmdSWO.defaultvalue("")
+gui.Form1.cmdSWO.controlgroup(0)
+gui.Form1.cmdEWO.create(button)
+gui.Form1.cmdEWO.caption("^")
+gui.Form1.cmdEWO.visible(True)
+gui.Form1.cmdEWO.size(420,300)
+gui.Form1.cmdEWO.zorder(0)
+gui.Form1.cmdEWO.position(3770,425)
+gui.Form1.cmdEWO.enabled(True)
+gui.Form1.cmdEWO.parent("frmwo")
+gui.Form1.cmdEWO.fontname("Arial")
+gui.Form1.cmdEWO.fontsize(8)
+gui.Form1.cmdEWO.event(click,cmdewo_click)
+gui.Form1.cmdEWO.defaultvalue("")
+gui.Form1.cmdEWO.controlgroup(0)
+gui.Form1.lbl8.create(label,"Ending Workcenter",True,1935,255,1,2315,200,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl8.parent("frmwc")
+gui.Form1.lbl8.defaultvalue("")
+gui.Form1.lbl8.controlgroup(0)
+gui.Form1.lbl9.create(label,"Starting Workcenter",True,1935,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl9.parent("frmwc")
+gui.Form1.lbl9.defaultvalue("")
+gui.Form1.lbl9.controlgroup(0)
+gui.Form1.txtSWC.create(textbox,"",True,1440,300,0,200,425,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtSWC.parent("frmwc")
+gui.Form1.txtSWC.event(lostfocus,txtswc_lostfocus)
+gui.Form1.txtSWC.defaultvalue("")
+gui.Form1.txtSWC.controlgroup(1)
+gui.Form1.txtEWC.create(textbox,"",True,1440,300,0,2315,425,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEWC.parent("frmwc")
+gui.Form1.txtEWC.defaultvalue("")
+gui.Form1.txtEWC.controlgroup(1)
+gui.Form1.cmdSWC.create(button)
+gui.Form1.cmdSWC.caption("^")
+gui.Form1.cmdSWC.visible(True)
+gui.Form1.cmdSWC.size(420,300)
+gui.Form1.cmdSWC.zorder(0)
+gui.Form1.cmdSWC.position(1670,425)
+gui.Form1.cmdSWC.enabled(True)
+gui.Form1.cmdSWC.parent("frmwc")
+gui.Form1.cmdSWC.fontname("Arial")
+gui.Form1.cmdSWC.fontsize(8)
+gui.Form1.cmdSWC.event(click,cmdswc_click)
+gui.Form1.cmdSWC.defaultvalue("")
+gui.Form1.cmdSWC.controlgroup(0)
+gui.Form1.cmdEWC.create(button)
+gui.Form1.cmdEWC.caption("^")
+gui.Form1.cmdEWC.visible(True)
+gui.Form1.cmdEWC.size(420,300)
+gui.Form1.cmdEWC.zorder(0)
+gui.Form1.cmdEWC.position(3770,425)
+gui.Form1.cmdEWC.enabled(True)
+gui.Form1.cmdEWC.parent("frmwc")
+gui.Form1.cmdEWC.fontname("Arial")
+gui.Form1.cmdEWC.fontsize(8)
+gui.Form1.cmdEWC.event(click,cmdewc_click)
+gui.Form1.cmdEWC.defaultvalue("")
+gui.Form1.cmdEWC.controlgroup(0)
+gui.Form1.chkAllWC.create(checkbox)
+gui.Form1.chkAllWC.caption("All Workcenters")
+gui.Form1.chkAllWC.visible(True)
+gui.Form1.chkAllWC.size(1935,255)
+gui.Form1.chkAllWC.zorder(0)
+gui.Form1.chkAllWC.position(200,865)
+gui.Form1.chkAllWC.enabled(True)
+gui.Form1.chkAllWC.alignment(0)
+gui.Form1.chkAllWC.parent("frmwc")
+gui.Form1.chkAllWC.fontname("Arial")
+gui.Form1.chkAllWC.fontsize(8)
+gui.Form1.chkAllWC.defaultvalue("1")
+gui.Form1.chkAllWC.controlgroup(1)
+gui.Form1.txtBSuffix.create(textbox,"",True,480,300,0,1100,425,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtBSuffix.parent("frmwo")
+gui.Form1.txtBSuffix.defaultvalue("")
+gui.Form1.txtBSuffix.controlgroup(0)
+gui.Form1.txtESuffix.create(textbox,"",True,480,300,0,3235,425,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtESuffix.parent("frmwo")
+gui.Form1.txtESuffix.defaultvalue("")
+gui.Form1.txtESuffix.controlgroup(0)
+gui.Form1.txtsEmp.tabstop(True)
+gui.Form1.txtsEmp.tabindex(1)
+gui.Form1.cmdSEmp.tabstop(True)
+gui.Form1.cmdSEmp.tabindex(2)
+gui.Form1.txtEEmp.tabstop(True)
+gui.Form1.txtEEmp.tabindex(3)
+gui.Form1.cmdEEmp.tabstop(True)
+gui.Form1.cmdEEmp.tabindex(4)
+gui.Form1.chkAll.tabstop(True)
+gui.Form1.chkAll.tabindex(5)
+gui.Form1.txtSWO.tabstop(True)
+gui.Form1.txtSWO.tabindex(6)
+gui.Form1.cmdSWO.tabstop(True)
+gui.Form1.cmdSWO.tabindex(7)
+gui.Form1.txtEWO.tabstop(True)
+gui.Form1.txtEWO.tabindex(8)
+gui.Form1.cmdEWO.tabstop(True)
+gui.Form1.cmdEWO.tabindex(9)
+gui.Form1.chkAllWO.tabstop(True)
+gui.Form1.chkAllWO.tabindex(10)
+gui.Form1.txtSWC.tabstop(True)
+gui.Form1.txtSWC.tabindex(11)
+gui.Form1.cmdSWC.tabstop(True)
+gui.Form1.cmdSWC.tabindex(12)
+gui.Form1.txtEWC.tabstop(True)
+gui.Form1.txtEWC.tabindex(13)
+gui.Form1.cmdEWC.tabstop(True)
+gui.Form1.cmdEWC.tabindex(14)
+gui.Form1.chkAllWC.tabstop(True)
+gui.Form1.chkAllWC.tabindex(15)
+gui.Form1.dtpSDate.tabstop(True)
+gui.Form1.dtpSDate.tabindex(16)
+gui.Form1.dtpEDate.tabstop(True)
+gui.Form1.dtpEDate.tabindex(17)
+gui.Form1.cmdOK.tabstop(True)
+gui.Form1.cmdOK.tabindex(18)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.UDT.uBalance.Define("sEmpID",String,Empl)
+Variable.UDT.uBalance.Define("sEmployee",String,Employee)
+Variable.UDT.uBalance.Define("dCharge",Date,Charge_Date)
+Variable.UDT.uBalance.Define("sSTime",String,Start_Time)
+Variable.UDT.uBalance.Define("dDateOut",Date,Date_Out)
+Variable.UDT.uBalance.Define("sETime",String,End_Time)
+Variable.UDT.uBalance.Define("sMachine",String,Machine)
+Variable.UDT.uBalance.Define("sJob",String,Job)
+Variable.UDT.uBalance.Define("sSuffix",String,Suffix)
+Variable.UDT.uBalance.Define("sWO",String,WO)
+Variable.UDT.uBalance.Define("sSeq",String,Seq)
+Variable.UDT.uBalance.Define("sFlag",String,Flag_Indirect)
+Variable.UDT.uBalance.Define("iBIRunID",Long)
+Variable.UDT.uBalance.Define("sHoursActual",String)
+Variable.UDT.uBalance.Define("sHoursWorked",Float,Hours_Worked)
+Variable.UDT.uBalance.Define("sDesc",String,Description)
+Variable.UDT.uBalance.Define("sOn",String)
+Variable.UDT.uBalance.Define("sOff",String)
+Variable.uGlobal.uBalance.Declare("uBalance")
+Variable.Global.iBIRunID.Declare(Long,0)
+Variable.Global.iBILogID.Declare(Long,0)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,500)
+F.ODBC.Connection!conx.Execute("Delete GCG_3998_DlyBalEmp")
+
+' default "All" boxes to checked
+Gui.Form1.chkAll.Value(1)
+Gui.Form1.chkAllWC.Value(1)
+Gui.Form1.chkAllWO.Value(1)
+
+Gui.Form1..Show
+
+Program.Sub.Main.End
+
+program.sub.cmdok_click.start
+
+V.Local.sSql.Declare(String)
+V.Local.sSEmp.Declare(String)
+V.Local.sEEmp.Declare(String)
+V.Local.sCase.Declare(String)
+V.Local.sParam.Declare(String)
+V.Local.sVal.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iHours.Declare(String)
+V.Local.iMin.Declare(String)
+
+V.Local.dSDate.Declare(Date)
+V.Local.dEDate.Declare(Date)
+V.Local.iCount.Declare(Long)
+V.Local.iMonth.Declare(String)
+V.Local.iDay.Declare(String)
+V.Local.bDec.Declare(Boolean)
+
+V.Local.sCase.Set(V.Screen.Form1!chkAll.Value)
+
+F.Intrinsic.Control.If(V.Local.sCase,=,0)
+	F.Intrinsic.Control.If(V.Screen.Form1!txtsEmp.Text,=,"")
+		F.Intrinsic.UI.Msgbox("Please select an employee range!","Error")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.ElseIf(V.Screen.Form1!txtEEmp.Text,=,"")
+		F.Intrinsic.UI.Msgbox("Please select an employee range!","Error")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(Disablescreencontrols)
+
+'Get BI Run ID
+F.Global.BI.GetRunID(V.Global.iBIRunID)
+'Start Logging
+F.Global.BI.StartLogging(V.Global.iBIRunID,-1,-1,"",V.Global.iBILogID)
+
+V.Local.sParam.Set("BIRUNID")
+V.Local.sVal.Set(V.Global.iBIRunID)
+V.uGlobal.uBalance.Redim(-1,-1)
+
+'Set Variables
+V.Local.dSDate.Set(V.Screen.Form1!dtpSDate.Value)
+V.Local.dEDate.Set(V.Screen.Form1!dtpEDate.Value)
+V.Local.sSEmp.Set(V.Screen.Form1!txtsEmp.Text)
+V.Local.sEEmp.Set(V.Screen.Form1!txtEEmp.Text)
+
+'Case is based on all Employees or just a Range
+F.Intrinsic.Control.SelectCase(V.Local.sCase)
+
+	F.Intrinsic.Control.Case(0)
+		F.Intrinsic.String.Build("Select Empl, Employee, Charge_Date, Start_Time, Date_Out, End_Time, Machine, Job, Suffix, Seq, Hours_Worked, Flag_Indirect, Description, Job+Suffix as WO  From v_Job_Detail Where Charge_Date Between '{0}' And '{1}' And Empl Between '{2}' And '{3}'",V.Local.dSDate.PervasiveDate,V.Local.dEDate.PervasiveDate,V.Local.sSEmp.Trim,V.Local.sEEmp.Trim,V.Local.sSql)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("conx","rst","V.uGlobal.uBalance",False)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+
+		F.Intrinsic.String.Build("Select Employee as Empl, Employee_Name as Employee, Charge_Date, Start_Time, Date_Out, End_Time, Machine, Job, Suffix, Seq, Hours_Worked, Flag_Indirect, Description, Job+Suffix as WO From v_Job_HIst_Dtl Where Charge_Date Between '{0}' And '{1}' And Employee Between '{2}' And '{3}'",V.Local.dSDate.PervasiveDate,V.Local.dEDate.PervasiveDate,V.Local.sSEmp.Trim,V.Local.sEEmp.Trim,V.Local.sSql)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSql)
+'		F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBalance!sEmpID,"Employee")
+'		F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBalance!sEmployee,"Employee_Name")
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("conx","rst","V.uGlobal.uBalance",True)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+
+
+	F.Intrinsic.Control.Case(1)
+		F.Intrinsic.String.Build("Select Empl, Employee, Charge_Date, Start_Time, Date_Out, End_Time, Machine, Job, Suffix, Seq, Hours_Worked, Flag_Indirect, Description, Job+Suffix as WO From v_Job_Detail Where Charge_Date Between '{0}' And '{1}'",V.Local.dSDate.PervasiveDate,V.Local.dEDate.PervasiveDate,V.Local.sSql)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("conx","rst","V.uGlobal.uBalance",False)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+
+		F.Intrinsic.String.Build("Select  Employee as Empl, Employee_Name as Employee, Charge_Date, Start_Time, Date_Out, End_Time, Machine, Job, Suffix, Seq, Hours_Worked, Flag_Indirect, Description, Job+Suffix as WO From v_Job_Hist_Dtl Where Charge_Date Between '{0}' And '{1}'",V.Local.dSDate.PervasiveDate,V.Local.dEDate.PervasiveDate,V.Local.sSql)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSql)
+'		F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBalance!sEmpID,"Employee")
+'		F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBalance!sEmployee,"Employee_Name")
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("conx","rst","V.uGlobal.uBalance",True)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Close
+
+F.Intrinsic.Control.EndSelect
+
+' check for entered workorder range options
+F.Intrinsic.Control.CallSub(Worange)
+
+' check for entered workcenter range options
+F.Intrinsic.Control.CallSub(Wcrange)
+
+' if no records are found, alert user, enable screen controls
+F.Intrinsic.Control.If(V.uGlobal.uBalance!sDesc.UBound,<,0)
+	F.Intrinsic.UI.Msgbox("No records found.")
+	F.Intrinsic.Control.CallSub(Enablescreencontrols)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Convert Hours Worked from Decimal Hours to Actual Hours and Minutes
+F.Intrinsic.Control.For(V.Local.iCount,0,V.uGlobal.uBalance.UBound,1)
+	F.Intrinsic.String.IsInString(V.uGlobal.uBalance(v.Local.iCount)!sHoursWorked,".",True,V.Local.bDec)
+	F.Intrinsic.Control.If(V.Local.bDec,=,True)
+		F.Intrinsic.String.Split(V.uGlobal.uBalance(v.Local.iCount)!sHoursWorked,".",V.Local.sRet)
+		V.Local.iHours.Set(V.Local.sRet(0))
+		F.Intrinsic.String.LPad(V.Local.iHours,"0",2,V.Local.iHours)
+		F.Intrinsic.Math.Mult(V.Local.sRet(1),60,V.Local.iMin)
+		F.Intrinsic.String.LPad(V.Local.iMin,"0",2,V.Local.iMin)
+	F.Intrinsic.Control.Else
+		V.Local.iHours.Set(V.uGlobal.uBalance(v.Local.iCount)!sHoursWorked)
+		F.Intrinsic.String.LPad(V.Local.iHours,"0",2,V.Local.iHours)
+		V.Local.iMin.Set("00")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Concat(V.Local.iHours,":",V.Local.iMin,V.uGlobal.uBalance(v.Local.iCount)!sHoursActual)
+
+	F.Intrinsic.Control.If(V.uGlobal.uBalance(v.Local.iCount)!sDesc,=,"")
+		F.Intrinsic.String.Build("Select WorkGroup_Head.Descr, Workgroup_Head.Work_Group, Workgroup_Line.WorkCenter from Workgroup_Head Join WorkGroup_Line on WorkGroup_Head.Work_Group = WorkGroup_Line.WorkGroup Where WorkGroup_LIne.Workcenter = '{0}'",V.uGlobal.uBalance(v.Local.iCount)!sMachine.Trim,V.Local.sSql)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+			V.uGlobal.uBalance(v.Local.iCount)!sDesc.Set(V.ODBC.conx!rst.FieldValTrim!Descr)
+		F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Date.Month(V.uGlobal.uBalance(v.Local.iCount)!dCharge,V.Local.iMonth)
+	F.Intrinsic.String.Format(V.Local.iMonth,"00",V.Local.iMonth)
+	F.Intrinsic.Date.Day(V.uGlobal.uBalance(v.Local.iCount)!dCharge,V.Local.iDay)
+	F.Intrinsic.String.Format(V.Local.iDay,"00",V.Local.iDay)
+	F.Intrinsic.String.Concat(V.Local.iMonth,V.Local.iDay,":",V.uGlobal.uBalance(v.Local.iCount)!sSTime,V.uGlobal.uBalance(v.Local.iCount)!sOn)
+
+	F.Intrinsic.Date.Month(V.uGlobal.uBalance(v.Local.iCount)!dDateOut,V.Local.iMonth)
+	F.Intrinsic.String.Format(V.Local.iMonth,"00",V.Local.iMonth)
+	F.Intrinsic.Date.Day(V.uGlobal.uBalance(v.Local.iCount)!dDateOut,V.Local.iDay)
+	F.Intrinsic.String.Format(V.Local.iDay,"00",V.Local.iDay)
+	F.Intrinsic.String.Concat(V.Local.iMonth,V.Local.iDay,":",V.uGlobal.uBalance(v.Local.iCount)!sETime,V.uGlobal.uBalance(v.Local.iCount)!sOff)
+
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBalance!iBIRunID,"BIRunID")
+'F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBalance!sHoursActual,"Hours_Actual")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBalance!sOn,"ON_Time")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBalance!sOff,"Off_Time")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBalance!sWO,"")
+'F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uBalance!sEmployee,"Employee_Name")
+
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uBalance!iBIRunID,V.Global.iBIRunID)
+
+V.Local.sSql.Set("Select * From GCG_3998_DlyBalEmp")
+F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sSql)
+F.Intrinsic.Variable.SaveUDTToRecordSet("conx","rst","V.uGlobal.uBalance")
+F.ODBC.conx!rst.Close
+Gui.Form1..Visible(false)
+'Stop Logging
+F.Global.BI.StopLogging(V.Global.iBILogID)
+
+V.Local.sParam.Set("WORANGE*!*WCRANGE")
+F.Intrinsic.String.Build("{0}*!*{1}",V.Args.WORANGE,V.Args.WCRANGE,V.Local.sVal)
+'Print the Report
+F.Global.BI.RunReportPreProcessor(V.Global.iBIRunID,V.Global.iBILogID,V.Local.sParam,V.Local.sVal,"",-1,True,"",-1,"",-1,"","",V.Global.iBIRunID)
+
+F.Intrinsic.Control.CallSub(Form1_unload)
+
+program.sub.cmdok_click.end
+
+program.sub.cmdsemp_click.start
+
+V.Local.sRet.Declare(String)
+
+
+
+
+F.Intrinsic.UI.Browser(50,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,!=,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtsEmp.Text(V.Local.sRet(0))
+	Gui.Form1.txtEEmp.Text(V.Local.sRet(0))
+	Gui.Form1.txtEEmp.SetFocus
+	Gui.Form1.chkAll.Value(0)
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdsemp_click.end
+
+program.sub.cmdeemp_click.start
+
+V.Local.sRet.Declare(String)
+
+
+
+
+F.Intrinsic.UI.Browser(50,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,!=,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtEEmp.Text(V.Local.sRet(0))
+	Gui.Form1.chkAll.Value(0)
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdeemp_click.end
+
+program.sub.form1_unload.start
+
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+program.sub.form1_unload.end
+
+program.sub.txtsemp_keypressenter.start
+
+F.Intrinsic.Control.If(V.Screen.Form1!txtsEmp.Text,!=,"","AND",V.Screen.Form1!txtEEmp.Text,=,"")
+	Gui.Form1.txtEEmp.Text(V.Screen.Form1!txtsEmp.Text)
+	Gui.Form1.txtEEmp.SetFocus
+F.Intrinsic.Control.Else
+	Gui.Form1.txtEEmp.SetFocus
+F.Intrinsic.Control.EndIf
+
+program.sub.txtsemp_keypressenter.end
+
+program.sub.txtsemp_lostfocus.start
+
+
+F.Intrinsic.Control.If(V.Screen.Form1!txtsEmp.Text,!=,"","AND",V.Screen.Form1!txtEEmp.Text,=,"")
+	Gui.Form1.txtEEmp.Text(V.Screen.Form1!txtsEmp.Text)
+	Gui.Form1.txtEEmp.SetFocus
+'F.Intrinsic.Control.Else
+'	Gui.Form1.txtEEmp.SetFocus
+F.Intrinsic.Control.EndIf
+
+' if a range is selected, uncheck the "All"
+F.Intrinsic.Control.If(V.Screen.Form1!txtsEmp.text,!=,"")
+	Gui.Form1.chkAll.Value(0)
+F.Intrinsic.Control.Else
+	Gui.Form1.chkAll.Value(1)
+F.Intrinsic.Control.EndIf
+
+program.sub.txtsemp_lostfocus.end
+
+program.sub.cmdswo_click.start
+
+
+V.Local.sRet.Declare(String)
+
+
+
+
+F.Intrinsic.UI.Browser(1000,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,!=,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	V.Local.sRet.RedimPreserve(0,1)
+	Gui.Form1.txtSWO.Text(V.Local.sRet(0))
+	Gui.Form1.txtBSuffix.Text(V.Local.sRet(1))
+	Gui.Form1.txtEWO.Text(V.Local.sRet(0))
+	Gui.Form1.txtESuffix.Text(V.Local.sRet(1))
+	Gui.Form1.txtEWO.SetFocus
+	Gui.Form1.chkAllWO.Value(0)
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdswo_click.end
+
+program.sub.cmdewo_click.start
+
+V.Local.sRet.Declare(String)
+
+
+
+
+F.Intrinsic.UI.Browser(1000,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,!=,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtEWO.Text(V.Local.sRet(0))
+	Gui.Form1.txtESuffix.Text(V.Local.sRet(1))
+	Gui.Form1.chkAllWO.Value(0)
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdewo_click.end
+
+program.sub.cmdewc_click.start
+
+V.Local.sRet.Declare(String)
+
+
+
+
+F.Intrinsic.UI.Browser(400,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,!=,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtEWC.Text(V.Local.sRet(0))
+	Gui.Form1.chkAllWC.Value(0)
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdewc_click.end
+
+program.sub.cmdswc_click.start
+
+V.Local.sRet.Declare(String)
+
+
+
+
+F.Intrinsic.UI.Browser(400,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,!=,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtSWC.Text(V.Local.sRet(0))
+	Gui.Form1.txtEWC.Text(V.Local.sRet(0))
+	Gui.Form1.txtEWC.SetFocus
+	Gui.Form1.chkAllWC.Value(0)
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdswc_click.end
+
+program.sub.txtswo_lostfocus.start
+
+
+
+F.Intrinsic.Control.If(V.Screen.Form1!txtSWO.Text,!=,"","AND",V.Screen.Form1!txtEWO.Text,=,"")
+	Gui.Form1.txtEWO.Text(V.Screen.Form1!txtSWO.Text)
+	Gui.Form1.txtEWO.SetFocus
+'F.Intrinsic.Control.Else
+'	Gui.Form1.txtEWO.SetFocus
+F.Intrinsic.Control.EndIf
+
+' if a range is selected, uncheck the "All"
+F.Intrinsic.Control.If(V.Screen.Form1!txtSWO.text,!=,"")
+	Gui.Form1.chkAllWO.Value(0)
+F.Intrinsic.Control.Else
+	Gui.Form1.chkAllWO.Value(1)
+F.Intrinsic.Control.EndIf
+
+program.sub.txtswo_lostfocus.end
+
+program.sub.txtswc_lostfocus.start
+
+
+F.Intrinsic.Control.If(V.Screen.Form1!txtSWC.Text,!=,"","AND",V.Screen.Form1!txtEWC.Text,=,"")
+	Gui.Form1.txtEWC.Text(V.Screen.Form1!txtSWC.Text)
+	Gui.Form1.txtEWC.SetFocus
+'F.Intrinsic.Control.Else
+'	Gui.Form1.txtEWC.SetFocus
+F.Intrinsic.Control.EndIf
+
+' if a range is selected, uncheck the "All"
+F.Intrinsic.Control.If(V.Screen.Form1!txtSWC.text,!=,"")
+	Gui.Form1.chkAllWC.Value(0)
+F.Intrinsic.Control.Else
+	Gui.Form1.chkAllWC.Value(1)
+F.Intrinsic.Control.EndIf
+
+program.sub.txtswc_lostfocus.end
+
+Program.Sub.disableScreenControls.Start
+
+Gui.Form1.cmdOK.Enabled(False)
+
+' employee range
+Gui.Form1.chkAll.Enabled(False)
+Gui.Form1.cmdEEmp.Enabled(False)
+Gui.Form1.cmdSEmp.Enabled(False)
+Gui.Form1.txtEEmp.Enabled(False)
+Gui.Form1.txtsEmp.Enabled(False)
+
+' WO range
+Gui.Form1.chkAllWO.Enabled(false)
+Gui.Form1.cmdSWO.Enabled(false)
+Gui.Form1.cmdEWO.Enabled(false)
+Gui.Form1.txtSWO.Enabled(false)
+Gui.Form1.txtEWO.Enabled(false)
+Gui.Form1.txtBSuffix.Enabled(false)
+Gui.Form1.txtESuffix.Enabled(false)
+
+' WC range
+Gui.Form1.chkAllWC.Enabled(false)
+Gui.Form1.cmdSWC.Enabled(false)
+Gui.Form1.cmdEWC.Enabled(false)
+Gui.Form1.txtSWC.Enabled(false)
+Gui.Form1.txtEWC.Enabled(false)
+
+' date range
+Gui.Form1.dtpEDate.Enabled(False)
+Gui.Form1.dtpSDate.Enabled(False)
+
+' wait message
+Gui.Form1.lblWait.Enabled(True)
+Gui.Form1.lblWait.Caption("Generating Report Please Wait!")
+
+Program.Sub.disableScreenControls.End
+
+Program.Sub.enableScreenControls.Start
+
+
+Gui.Form1.cmdOK.Enabled(True)
+
+' employee range
+Gui.Form1.chkAll.Enabled(True)
+Gui.Form1.cmdEEmp.Enabled(True)
+Gui.Form1.cmdSEmp.Enabled(True)
+Gui.Form1.txtEEmp.Enabled(True)
+Gui.Form1.txtsEmp.Enabled(True)
+
+' WO range
+Gui.Form1.chkAllWO.Enabled(True)
+Gui.Form1.cmdSWO.Enabled(True)
+Gui.Form1.cmdEWO.Enabled(True)
+Gui.Form1.txtSWO.Enabled(True)
+Gui.Form1.txtEWO.Enabled(True)
+Gui.Form1.txtBSuffix.Enabled(True)
+Gui.Form1.txtESuffix.Enabled(True)
+
+' WC range
+Gui.Form1.chkAllWC.Enabled(True)
+Gui.Form1.cmdSWC.Enabled(True)
+Gui.Form1.cmdEWC.Enabled(True)
+Gui.Form1.txtSWC.Enabled(True)
+Gui.Form1.txtEWC.Enabled(True)
+
+' date range
+Gui.Form1.dtpEDate.Enabled(True)
+Gui.Form1.dtpSDate.Enabled(True)
+
+' wait message
+Gui.Form1.lblWait.Enabled(True)
+Gui.Form1.lblWait.Caption("")
+
+Program.Sub.enableScreenControls.End
+
+Program.Sub.woRange.Start
+
+V.Local.sJobHold.Declare(String)
+V.Local.sSuffixHold.Declare(String)
+V.Local.sCase.Declare(String)
+V.Local.sRange.Declare(String)
+V.Local.sWO.Declare(String)
+
+V.Local.sCase.Set(V.Screen.Form1!chkAllWO.Value)
+F.Intrinsic.Control.SelectCase(V.Local.sCase)
+' all workorders is not checked, remove udt elements outside selected range
+F.Intrinsic.Control.Case(0)
+	' less that start
+	F.Intrinsic.String.Build("<::{0}{1}",V.Screen.Form1!txtSWO.Text,V.Screen.Form1!txtBSuffix.Text,V.Local.sJobHold)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uBalance!sWO,V.Local.sJobHold)
+	' greater than end
+	F.Intrinsic.String.Build(">::{0}{1}",V.Screen.Form1!txtEWO.Text,V.Screen.Form1!txtESuffix.Text,V.Local.sJobHold)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uBalance!sJob,V.Local.sJobHold)
+	' delete the flagged elements
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uBalance)
+	' set range for report
+	F.Intrinsic.String.Build("Work Order {0} - {1} Thru {2} - {3} ",V.Screen.Form1!txtSWO.Text,V.Screen.Form1!txtBSuffix.Text,V.Screen.Form1!txtEWO.Text,V.Screen.Form1!txtESuffix.Text,V.Local.sRange)
+
+' all workorders is checked.
+F.Intrinsic.Control.Case(1)
+	V.Local.sRange.Set("All Work Orders")
+
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Variable.AddRV("WORANGE",V.Local.sRange)
+
+Program.Sub.woRange.End
+
+Program.Sub.wcRange.Start
+
+
+V.Local.sHold.Declare(String)
+V.Local.sCase.Declare(String)
+V.Local.sRange.Declare(String)
+
+V.Local.sCase.Set(V.Screen.Form1!chkAllWC.Value)
+F.Intrinsic.Control.SelectCase(V.Local.sCase)
+' all workorders is not checked, remove udt elements outside selected range
+F.Intrinsic.Control.Case(0)
+	' less that start
+	F.Intrinsic.String.Build("<::{0}",V.Screen.Form1!txtSWC.Text,V.Local.sHold)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uBalance!sMachine,V.Local.sHold)
+	' greater than end
+	F.Intrinsic.String.Build(">::{0}",V.Screen.Form1!txtEWC.Text,V.Local.sHold)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uBalance!sMachine,V.Local.sHold)
+	' delete the flagged elements
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uBalance)
+	' define the WC range for the report
+	F.Intrinsic.String.Build("Workcenter Range {0} Thru {1}",V.Screen.Form1!txtSWC.Text,V.Screen.Form1!txtEWC.Text,V.Local.sRange)
+
+' all workorders is checked.
+F.Intrinsic.Control.Case(1)
+	V.Local.sRange.Set("All Workcenters")
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Variable.AddRV("WCRANGE",V.Local.sRange)
+
+Program.Sub.wcRange.End
+
+
